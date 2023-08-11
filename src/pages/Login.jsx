@@ -10,6 +10,7 @@ import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 import { Formik, Form } from "formik";
 import { object, string } from "yup";
+import { login } from "../service/authApiCall"
 
 const Login = () => {
   const navigate = useNavigate();
@@ -69,7 +70,7 @@ const Login = () => {
             initialValues={{ email: "", password: "" }}
             validationSchema={loginSchema}
             onSubmit={(values, action) => {
-              //login()  ve devamında post yapılmalı
+              login(values)  
               action.resetForm();
               action.setSubmitting(false);
             }}
