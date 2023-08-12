@@ -10,9 +10,12 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Formik, Form } from "formik";
 import { object, string } from "yup";
-import { login } from "../hooks/useAuthCall";
+// import { login } from "../hooks/useAuthCall";
+import useAuthCall from "../hooks/useAuthCall";
 
 const Login = () => {
+  const {login} = useAuthCall()
+
   const loginSchema = object({
     email: string()
       .email("Lutfen valid bir email giriniz")
