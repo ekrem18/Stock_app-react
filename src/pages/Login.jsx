@@ -13,7 +13,7 @@ import { object, string } from "yup"
 import { login } from "../hooks/authApiCall"
 
 const Login = () => {
-  //? harici validasyon şemasi
+  
   const loginSchema = object({
     email: string()
       .email("Lutfen valid bir email giriniz")
