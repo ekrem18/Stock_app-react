@@ -53,7 +53,7 @@ const useAuthCall = () => {
     } catch (error) {
       console.log(error);
       dispatch(fetchFail())
-      toastErrorNotify("Login başarısız")
+      toastErrorNotify(error.response.data.non_field_errors[0])
     }
   };
 
