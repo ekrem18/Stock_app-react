@@ -52,7 +52,8 @@ const useAuthCall = () => {
       navigate("/stock");
     } catch (error) {
       console.log(error);
-      dispatch(fetchFail());
+      dispatch(fetchFail())
+      toastErrorNotify("Login başarısız")
     }
   };
   return { login };
