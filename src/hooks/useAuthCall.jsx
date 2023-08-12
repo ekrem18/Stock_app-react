@@ -32,7 +32,7 @@ import axios from "axios";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { fetchFail, fetchStart, loginSuccess } from "../features/authSlice";
+import { fetchFail, fetchStart, loginSuccess, logoutSuccess } from "../features/authSlice";
 
 const useAuthCall = () => {
   const navigate = useNavigate();
@@ -56,7 +56,24 @@ const useAuthCall = () => {
       toastErrorNotify("Login başarısız")
     }
   };
-  return { login };
+
+  const logout = async () => {
+    const BASE_URL = "http://13121.fullstack.clarusway.com";
+
+    dispatch(fetchStart());
+    try {
+      await axios.post(`${BASE_URL}/account/auth/logout/`);
+      dispatch(logoutSuccess());
+      toastSuccessNotify("logout islemi basarili");
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      dispatch(fetchFail())
+      toastErrorNotify("Logout başarısız")
+    }
+  };
+
+  return { login, logout };
 };
 
 export default useAuthCall;
