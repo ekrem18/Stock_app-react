@@ -39,12 +39,12 @@ const useAuthCall = () => {
   const dispatch = useDispatch();
 
   const login = async (userData) => {
-    const BASE_URL = "http://13121.fullstack.clarusway.com";
+    // const BASE_URL = "http://13121.fullstack.clarusway.com";
 
     dispatch(fetchStart());
     try {
       const { data } = await axios.post(
-        `${BASE_URL}/account/auth/login/`,
+        `${import.meta.env.VITE_BASE_URL}/account/auth/login/`,
         userData
       );
       dispatch(loginSuccess(data));
@@ -58,11 +58,11 @@ const useAuthCall = () => {
   };
 
   const logout = async () => {
-    const BASE_URL = "http://13121.fullstack.clarusway.com";
+    // const BASE_URL = "http://13121.fullstack.clarusway.com";
 
     dispatch(fetchStart());
     try {
-      await axios.post(`${BASE_URL}/account/auth/logout/`);
+      await axios.post(`${import.meta.env.VITE_BASE_URL}/account/auth/logout/`);
       dispatch(logoutSuccess());
       toastSuccessNotify("logout islemi basarili");
       navigate("/");
