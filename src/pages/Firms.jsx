@@ -8,15 +8,17 @@ import { useDispatch } from "react-redux"
 
 const Firms = () => {
   const { token } = useSelector((state) => state.auth)
+ 
   const dispatch = useDispatch()
+ 
   const getFirms =async ()=>{
-    dispatch(fetchStart)
+    dispatch(fetchStart())
     try {
       const {data} =await axios(`${import.meta.env.VITE_BASE_URL}/stock/firms/` , {headers: {Authorization: `Token ${token}`}})
       dispatch(getFirmsSuccess(data))
       console.log(data);
     } catch (error) {
-      dispatch(fetchFail)
+      dispatch(fetchFail())
       console.log(error);
     }
   }
