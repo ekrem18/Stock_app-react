@@ -4,40 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify"
 
 const useStockCall = () => {
-  // const getFirms = async () => {
-  //   dispatch(fetchStart())
-  //   try {
-  //     const { data } = await axios(
-  //       `${import.meta.env.VITE_BASE_URL}/stock/firms/`,
-  //       {
-  //         headers: { Authorization: `Token ${token}` },
-  //       }
-  //     )
-  //     dispatch(getFirmsSuccess(data))
-  //     console.log(data)
-  //   } catch (error) {
-  //     dispatch(fetchFail())
-  //     console.log(error)
-  //   }
-  // }
-
-  // const getSales = async () => {
-  //   dispatch(fetchStart())
-  //   try {
-  //     const { data } = await axios(
-  //       `${import.meta.env.VITE_BASE_URL}/stock/sales/`,
-  //       {
-  //         headers: { Authorization: `Token ${token}` },
-  //       }
-  //     )
-  //     dispatch(getSalesSuccess(data))
-  //     console.log(data)
-  //   } catch (error) {
-  //     dispatch(fetchFail())
-  //     console.log(error)
-  //   }
-  // }
-
+  
   const { token } = useSelector((state) => state.auth)
   const dispatch = useDispatch()
 
