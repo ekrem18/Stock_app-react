@@ -25,7 +25,7 @@ const useStockCall = () => {
   const deleteStockData = async (url, id) => {
     dispatch(fetchStart())
     try {
-      await axios.delete(
+      await axiosWithToken.delete(
         `${import.meta.env.VITE_BASE_URL}/stock/${url}/${id}/`,
         {
           headers: { Authorization: `Token ${token}` },
