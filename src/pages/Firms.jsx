@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import { useSelector } from "react-redux";
 import useStockCall from "../hooks/useStockCall";
-// import FirmCard from "../components/FirmCard"
+import FirmCard from "../components/FirmCard"
 
 const Firms = () => {
   const { getStockData } = useStockCall();
