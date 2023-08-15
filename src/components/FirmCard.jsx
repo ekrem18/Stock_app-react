@@ -6,10 +6,11 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import EditIcon from "@mui/icons-material/Edit";
+import { btnStyle } from "../styles/globalStyles";
 
 export default function FirmCard({ firm }) {
   return (
-    <Card sx={{ maxWidth: "345px", maxHeight: "400px", p: 2 ,display:"flex",flexDirection:"column", justifyContent:"space-between"}}>
+    <Card sx={{ maxWidth: "345px", maxHeight: "400px", p: 2 ,display:"flex",flexDirection:"column", justifyContent:"space-between", alignItems:"center"}}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {firm.name}
@@ -30,8 +31,8 @@ export default function FirmCard({ firm }) {
       </Typography>
 
       <CardActions>
-        <EditIcon />
-        <DeleteOutlineIcon />
+        <EditIcon sx={btnStyle} />
+        <DeleteOutlineIcon sx={btnStyle} />
       </CardActions>
     </Card>
   );
