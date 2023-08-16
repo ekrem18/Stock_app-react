@@ -9,15 +9,8 @@ import useStockCall from "../hooks/useStockCall"
 
 export default function FirmModal({ open, handleClose, info, setInfo }) {
   const { postStockData, putStockData } = useStockCall()
-  //   const [info, setInfo] = useState({
-  //     name: "",
-  //     phone: "",
-  //     address: "",
-  //     image: "",
-  //   })
-
+ 
   const handleChange = (e) => {
-    // const { name, value } = e.target
     setInfo({ ...info, [e.target.name]: e.target.value })
   }
 
