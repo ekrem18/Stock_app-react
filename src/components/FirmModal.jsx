@@ -25,6 +25,7 @@ export default function FirmModal({ open, handleClose, info, setInfo }) {
 
     handleClose()
   }
+  
   return (
     <div>
       <Modal
