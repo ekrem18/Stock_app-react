@@ -1,18 +1,29 @@
-import * as React from "react";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
-import EditIcon from "@mui/icons-material/Edit";
-import { btnStyle } from "../styles/globalStyles";
-import useStockCall from "..//hooks/useStockCall"
+import * as React from "react"
+import Card from "@mui/material/Card"
+import CardActions from "@mui/material/CardActions"
+import CardContent from "@mui/material/CardContent"
+import CardMedia from "@mui/material/CardMedia"
+import Typography from "@mui/material/Typography"
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline"
+import EditIcon from "@mui/icons-material/Edit"
+import { btnStyle } from "../styles/globalStyles"
+import useStockCall from "../hooks/useStockCall"
 
-export default function FirmCard({ firm, handleOpen, info, setInfo  }) {
-  const {deleteStockData} = useStockCall()
+export default function FirmCard({ firm, handleOpen, info, setInfo }) {
+  const { deleteStockData } = useStockCall()
+
   return (
-    <Card sx={{ maxWidth: "345px", maxHeight: "400px", p: 2 ,display:"flex",flexDirection:"column", justifyContent:"space-between", alignItems:"center"}}>
+    <Card
+      sx={{
+        p: 2,
+        width: "300px",
+        height: "400px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}
+    >
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {firm.name}
@@ -33,12 +44,18 @@ export default function FirmCard({ firm, handleOpen, info, setInfo  }) {
       </Typography>
 
       <CardActions>
-        <EditIcon sx={btnStyle} onClick={ ()=> {
-          handleOpen()
-          setInfo(firm)
-          }} />
-        <DeleteOutlineIcon sx={btnStyle} onClick={()=> deleteStockData("firms", firm.id)}/>
+        <EditIcon
+          sx={btnStyle}
+          onClick={() => {
+            handleOpen()
+            setInfo(firm)
+          }}
+        />
+        <DeleteOutlineIcon
+          sx={btnStyle}
+          onClick={() => deleteStockData("firms", firm.id)}
+        />
       </CardActions>
     </Card>
-  );
+  )
 }
