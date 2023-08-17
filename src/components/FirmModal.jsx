@@ -21,7 +21,6 @@ export default function FirmModal({ open, handleClose, info, setInfo }) {
     } else {
       postStockData("firms", info)
     }
-
     handleClose()
   }
 
