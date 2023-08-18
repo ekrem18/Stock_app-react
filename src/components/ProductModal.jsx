@@ -13,7 +13,7 @@ import { useSelector } from "react-redux";
 
 export default function ProductModal({ open, handleClose }) {
   const { postStockData } = useStockCall();
-  const { categories } = useSelector((state) => state.stock);
+  const { categories, brands } = useSelector((state) => state.stock);
 
   const [info, setInfo] = useState({ name: "", category_id: "", brand_id: "" });
 
@@ -26,13 +26,16 @@ export default function ProductModal({ open, handleClose }) {
     console.log(info.id);
     postStockData("products", info);
     handleClose();
+    setInfo({name: "", category_id: "", brand_id: "" })
   };
 
   return (
     <div>
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={ () => {
+          handleClose()
+          setInfo({name: "", category_id: "", brand_id: "" })}}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -45,14 +48,32 @@ export default function ProductModal({ open, handleClose }) {
             <FormControl fullWidth>
               <InputLabel id="categories">Categories</InputLabel>
               <Select
-                labelId="Categories"
-                id="category_id"
-                name="categories"
+                labelId="categories"
+                id="category"
+                name="category_id"
                 value={info?.category_id || ""}
-                label="Categories"
+                label="categories"
                 onChange={handleChange}
               >
                 {categories?.map(({ id, name }) => (
+                  <MenuItem key={id} value={id}>
+                    {name}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+
+            <FormControl fullWidth>
+              <InputLabel id="brand">Brand</InputLabel>
+              <Select
+                labelId="brand"
+                id="brand"
+                name="brand_id"
+                value={info?.brand_id || ""}
+                label="brand"
+                onChange={handleChange}
+              >
+                {brands?.map(({ id, name }) => (
                   <MenuItem key={id} value={id}>
                     {name}
                   </MenuItem>
