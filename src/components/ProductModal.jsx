@@ -41,12 +41,13 @@ export default function ProductModal({ open, handleClose }) {
             onSubmit={handleSubmit}
           >
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Age</InputLabel>
+              <InputLabel id="categories">Categories</InputLabel>
               <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
+                labelId="Categories"
+                id="categories"
+                name="categories"
                 // value={age}
-                label="Age"
+                label="Categories"
                 onChange={handleChange}
               >
                 <MenuItem value={10}>Ten</MenuItem>
