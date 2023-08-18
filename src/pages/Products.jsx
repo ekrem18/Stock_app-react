@@ -7,7 +7,7 @@ import ProductModal from "../components/ProductModal";
 import ProductTable from "../components/ProductTable";
 
 const Products = () => {
-  const { getStockData, getProdCatBrands } = useStockCall();
+  const { getStockData } = useStockCall();
   const { products } = useSelector((state) => state.stock);
 
   const [open, setOpen] = useState(false);
@@ -15,7 +15,7 @@ const Products = () => {
   const handleClose = () => setOpen(false);
 
   useEffect(() => {
-    getProdCatBrands();
+    getStockData("products");
   }, []);
 
   return (
