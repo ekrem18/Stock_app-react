@@ -3,42 +3,42 @@ import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 
 const columns = [
-  { field: 'id', headerName: '#', width: 90 },
+  { field: 'id', headerName: '#', width: 90 , headerAlign:"center"},
   
   {
-    field: 'lastName',
+    field: 'category',
     headerName: 'Category',
     width: 150,
-    editable: true,
+    // editable: true,
   },
   {
-    field: 'age',
+    field: 'brand',
     headerName: 'Brand',
     type: 'number',
     width: 110,
-    editable: true,
+    // editable: true,
   },
   {
-    field: 'fullName',
+    field: 'name',
     headerName: 'Name',
     description: 'This column has a value getter and is not sortable.',
     sortable: false,
     width: 160,
-    valueGetter: (params) =>
-      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+    // valueGetter: (params) =>
+    //   `${params.row.firstName || ''} ${params.row.lastName || ''}`,
   },
   {
-    field: 'firstName',
+    field: 'stock',
     headerName: 'Stock',
     width: 150,
-    editable: true,
+    // editable: true,
   },
 
   {
-    field: 'firstName',
+    field: 'actions',
     headerName: 'Actions',
     width: 150,
-    editable: true,
+    // editable: true,
   },
 ];
 
@@ -68,7 +68,6 @@ export default function ProductTable() {
           },
         }}
         pageSizeOptions={[5]}
-        checkboxSelection
         disableRowSelectionOnClick
       />
     </Box>
