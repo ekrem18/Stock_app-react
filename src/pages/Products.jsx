@@ -16,6 +16,7 @@ const Products = () => {
 
   useEffect(() => {
     getStockData("products");
+    getStockData("categories");
   }, []);
 
   return (

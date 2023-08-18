@@ -9,9 +9,11 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { useSelector } from "react-redux";
 
 export default function ProductModal({ open, handleClose }) {
   const { postStockData } = useStockCall();
+  const {categories}= useSelector((state) => state.stock)
 
   const [info, setInfo] = useState({ name: "", category_id: "", brand_id: "" });
 
@@ -46,13 +48,15 @@ export default function ProductModal({ open, handleClose }) {
                 labelId="Categories"
                 id="categories"
                 name="categories"
-                // value={age}
+                value={}
                 label="Categories"
                 onChange={handleChange}
               >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                 {categories?.map(({ id, name }) => (
+                  <MenuItem key={id} value={id}>
+                    {name}
+                  </MenuItem>
+                ))}
               </Select>
             </FormControl>
 
