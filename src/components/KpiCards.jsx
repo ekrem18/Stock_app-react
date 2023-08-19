@@ -1,6 +1,6 @@
-import React from 'react'
 
 const KpiCards = () => {
+    const cardData = [{}]
   return (
     <div>KpiCards</div>
   )
