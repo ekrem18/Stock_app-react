@@ -1,6 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { DataGrid, GridActionsCellItem } from "@mui/x-data-grid";
+import { DataGrid, GridActionsCellItem, GridToolbar } from "@mui/x-data-grid";
 import { useSelector } from "react-redux";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { btnStyle } from "../styles/globalStyles";
@@ -69,19 +69,22 @@ export default function ProductTable() {
   ];
 
   return (
-    <Box sx={{ height: 400, width: "100%" }}>
+    <Box sx={{ width: "100%", mt: 4 }}>
       <DataGrid
+        autoHeight
         rows={products}
         columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: {
-              pageSize: 5,
-            },
-          },
-        }}
-        pageSizeOptions={[5]}
+        // initialState={{
+        //   pagination: {
+        //     paginationModel: {
+        //       pageSize: 5,
+        //     },
+        //   },
+        // }}
+        pageSize= {10}
+        pageSizeOptions={[10,20,75,100]}
         disableRowSelectionOnClick
+        slots= {{toolbar: GridToolbar}}
       />
     </Box>
   );
