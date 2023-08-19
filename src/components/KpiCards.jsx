@@ -3,7 +3,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PaymentsIcon from "@mui/icons-material/Payments"
 import { deepPurple, pink, amber } from "@mui/material/colors"
 
-import { Grid } from "@mui/material";
+import { Grid, Paper } from "@mui/material";
 
 const KpiCards = () => {
   const cardData = [
@@ -39,7 +39,7 @@ const KpiCards = () => {
       <Grid container>
         {cardData.map((item) => (
           <Grid item>
-
+            <Paper>KART</Paper>
           </Grid>
         ))}
       </Grid>
