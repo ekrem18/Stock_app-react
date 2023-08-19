@@ -81,7 +81,7 @@ export default function ProductTable() {
         //     },
         //   },
         // }}
-        pageSize= {10}
+        // pageSize= {10}
         pageSizeOptions={[10,20,75,100]}
         disableRowSelectionOnClick
         slots= {{toolbar: GridToolbar}}
