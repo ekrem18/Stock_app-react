@@ -1,46 +1,31 @@
-import { Card, Title, DonutChart } from "@tremor/react";
+import { Card, Title, LineChart } from "@tremor/react";
+import { useSelector } from "react-redux";
 
-const cities = [
-  {
-    name: "New York",
-    sales: 9800,
-  },
-  {
-    name: "London",
-    sales: 4567,
-  },
-  {
-    name: "Hong Kong",
-    sales: 3908,
-  },
-  {
-    name: "San Francisco",
-    sales: 2400,
-  },
-  {
-    name: "Singapore",
-    sales: 1908,
-  },
-  {
-    name: "Zurich",
-    sales: 1398,
-  },
-];
+const dataFormatter = (number) => `${Intl.NumberFormat("us").format(number).toString()}`;
 
-const valueFormatter = (number) => `$ ${Intl.NumberFormat("us").format(number).toString()}`;
-
-const Charts = () => (
-  <Card className="max-w-lg">
-    <Title>Sales</Title>
-    <DonutChart
+const Charts = () => {
+  const{sales} = useSelector((state) => state.stock)
+  
+  const salesData = sales?.map((item)=> ({
+    date: item.createds,
+    quantity: item.quantity,
+    price: item.price_total,
+  }))
+// console.log(s);
+  return(
+  <Card >
+    <Title>Total Sales</Title>
+    <LineChart
       className="mt-6"
-      data={cities}
-      category="sales"
-      index="name"
-      valueFormatter={valueFormatter}
-      colors={["slate", "violet", "indigo", "rose", "cyan", "amber"]}
+      data={salesData}
+      index="date"
+      categories={["quantity", "price"]}
+      colors={["emerald", "gray"]}
+      valueFormatter={dataFormatter}
+    
     />
   </Card>
-);
+  )
+};
 
 export default Charts
