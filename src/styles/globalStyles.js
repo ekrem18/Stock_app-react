@@ -14,3 +14,16 @@ export const btnStyle = {
     boxShadow: 24,
     p: 4,
   }
+
+  export const flex = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 2,
+  }
+  export const flexColumn = {
+    display: "flex",
+    flexDirection: "column",
+    gap: 2,
+  }
+  
