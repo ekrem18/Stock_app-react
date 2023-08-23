@@ -2,7 +2,8 @@ import Container from "@mui/material/Container"
 import Typography from "@mui/material/Typography"
 import Avatar from "@mui/material/Avatar"
 import LockIcon from "@mui/icons-material/Lock"
-import image from "../assets/result.svg"
+import vector from "../assets/vector.png"
+import logoo from "../assets/logoo.png"
 import Grid from "@mui/material/Grid"
 import Box from "@mui/material/Box"
 import { Link } from "react-router-dom"
@@ -26,9 +27,9 @@ const Register = () => {
         }}
       >
         <Grid item xs={12}>
-          <Typography variant="h3" color="primary" align="center">
-            STOCK APP
-          </Typography>
+        <Container  >
+            <img src={logoo} alt="" />
+          </Container>
         </Grid>
 
         <Grid item xs={12} sm={10} md={6}>
@@ -75,7 +76,7 @@ const Register = () => {
 
         <Grid item xs={0} sm={7} md={6}>
           <Container>
-            <img src={image} alt="" />
+            <img src={vector} alt="" />
           </Container>
         </Grid>
       </Grid>

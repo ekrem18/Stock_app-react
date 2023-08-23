@@ -3,7 +3,8 @@ import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
 import LockIcon from "@mui/icons-material/Lock"
-import image from "../assets/result.svg"
+import vector from "../assets/vector.png"
+import logoo from "../assets/logoo.png"
 import { Link } from "react-router-dom"
 import Box from "@mui/material/Box"
 import TextField from "@mui/material/TextField"
@@ -42,10 +43,10 @@ const Login = () => {
           p: 2,
         }}
       >
-        <Grid item xs={12} mb={3}>
-          <Typography variant="h3" color="primary" align="center">
-            STOCK APP
-          </Typography>
+        <Grid item xs={12}>
+        <Container  >
+            <img src={logoo} alt="" />
+          </Container>
         </Grid>
 
         <Grid item xs={12} sm={10} md={6}>
@@ -118,8 +119,8 @@ const Login = () => {
         </Grid>
 
         <Grid item xs={10} sm={7} md={6}>
-          <Container>
-            <img src={image} alt="img" />
+        <Container>
+            <img src={vector} alt="" />
           </Container>
         </Grid>
       </Grid>

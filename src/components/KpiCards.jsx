@@ -19,6 +19,15 @@ const KpiCards = () => {
 
   const cardData = [
     {
+      id: 3,
+      icon: <PaymentsIcon sx={{ fontSize: "2rem" }} />,
+      bgColor: amber[100],
+      color: amber[700],
+      title: "Purchases",
+      value: `$${totalPurchases}`,
+    },
+
+    {
       id: 1,
       icon: <MonetizationOnIcon sx={{ fontSize: "2rem" }} />,
       bgColor: deepPurple[100],
@@ -36,14 +45,7 @@ const KpiCards = () => {
       value: `$${totalSales - totalPurchases}`,
     },
 
-    {
-      id: 3,
-      icon: <PaymentsIcon sx={{ fontSize: "2rem" }} />,
-      bgColor: amber[100],
-      color: amber[700],
-      title: "Purchases",
-      value: `$${totalPurchases}`,
-    },
+   
   ];
   return (
     <Grid container justifyContent={"center"} spacing={3}>
@@ -58,7 +60,7 @@ const KpiCards = () => {
               justifyContent: "center",
               width: "280px",
             }}
-            elevation={5}
+            elevation={8}
           >
             <Avatar
               sx={{
