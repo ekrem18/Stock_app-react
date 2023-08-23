@@ -5,13 +5,13 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-
+import logoo from "../assets/logoo.png"
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import MenuListItems from "../components/MenuListItems";
 import { Outlet } from "react-router-dom";
-import { Button } from "@mui/material";
+import { Button, Container } from "@mui/material";
 import useAuthCall from "../hooks/useAuthCall";
 
 const drawerWidth = 200;
@@ -56,9 +56,9 @@ function Dashboard(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-            Stock App
-          </Typography>
+          <Container sx={{height:75, ml:1}} >
+            <img src={logoo} alt="" />
+          </Container>
           <Button variant="contained" onClick={() => logout()}>
             Logout
           </Button>
