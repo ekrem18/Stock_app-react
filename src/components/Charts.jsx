@@ -11,26 +11,25 @@ const Charts = () => {
   const salesData = sales?.map((item) => ({
     date: item.createds,
     quantity: item.quantity,
-    price: item.price_total,
-  }));
+    price: Number(item.price_total),
+  }))
 
-  const purchasesData = sales?.map((item) => ({
+  const purchasesData = purchases?.map((item) => ({
     date: item.createds,
-    quantity: item.quantity,
-    price: item.price_total,
-  }));
+    price: Number(item.price_total),
+  }))
   // console.log(s);
   return (
     <Grid container justifyContent="center" spacing={3} mt={4}>
       <Grid item xs={12} md={6}>
-        <Card>
+      <Card>
           <Title>Total Purchases</Title>
           <LineChart
-            className="mt-6"
+            className="mt-4"
             data={purchasesData}
             index="date"
-            categories={["quantity", "price"]}
-            colors={["emerald", "gray"]}
+            categories={["price"]}
+            colors={["green"]}
             valueFormatter={dataFormatter}
           />
         </Card>
@@ -40,11 +39,11 @@ const Charts = () => {
         <Card>
           <Title>Total Sales</Title>
           <LineChart
-            className="mt-6"
+            className="mt-4"
             data={salesData}
             index="date"
-            categories={["price"]}
-            colors={["emerald", "gray"]}
+            categories={["quantity", "price"]}
+            colors={["red", "blue"]}
             valueFormatter={dataFormatter}
           />
         </Card>
