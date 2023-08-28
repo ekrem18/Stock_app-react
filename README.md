@@ -1,6 +1,7 @@
 <h1>React-Redux Library App</h1>
 <br>
 ## Author
+
 - Linkedin: [@ekremyilmazturk](https://www.linkedin.com/in/ekrem-yilmazturk/)
 <br>
 
@@ -22,6 +23,7 @@
 <br>
 
 <h2>Live Link of the Project</h2>
+
 https://stock-app-react-dusky.vercel.app/
 <br>
 <br>
