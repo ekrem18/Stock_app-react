@@ -1,6 +1,5 @@
 <h1>React-Redux Library App</h1>
 
-
 ## Author
 - Linkedin: [@ekremyilmazturk](https://www.linkedin.com/in/ekrem-yilmazturk/)
 
@@ -23,21 +22,14 @@
 
 
 <h2>Live Link of the Project</h2>
-
 <br>
+https://stock-app-react-dusky.vercel.app/
 
-[Clik Me](stock-app-react-dusky.vercel.app)
 
-
- 
 <h2>How to install</h2>
-
-
 <br>
 In the project directory, you can run:
-
 #### `pnpm dev`
 
 <h2>How does my project look</h2>
-
 ![stock app](https://github.com/ekrem18/ekrem18/assets/130497212/4de056dc-4f4f-40ff-82c7-27caa584725f)
