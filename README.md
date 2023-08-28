@@ -10,7 +10,6 @@
 <br>
 <br>
 
-
 <h3>What's used in this app?</h3>
 <ul style="font-size: 18px;">
   <li>React</li>
@@ -24,17 +23,11 @@
 <br>
 <br>
 
-
-
 <h2>Live Link of the Project</h2>
-<br>
 https://stock-app-react-dusky.vercel.app/
 <br>
 <br>
 <br>
-
-
-
 
 <h2>How to install</h2>
 In the project directory, you can run:
@@ -42,8 +35,6 @@ In the project directory, you can run:
 <br>
 <br>
 <br>
-
-
 
 <h2>How does my project look</h2>
 
