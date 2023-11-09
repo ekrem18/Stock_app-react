@@ -21,7 +21,6 @@ export default function PurchaseTable({ handleOpen, setInfo }) {
     },
     {
       field: "firm",
-      valueGetter: (params) => params.row.firm_id?.name,
       headerName: "Firm",
       flex: 2,
       minWidth: 100,
@@ -31,7 +30,6 @@ export default function PurchaseTable({ handleOpen, setInfo }) {
 
     {
       field: "brand",
-      valueGetter: (params) => params.row.brand_id?.name,
       headerName: "Brand",
       flex: 1.5,
       minWidth: 100,
@@ -40,7 +38,6 @@ export default function PurchaseTable({ handleOpen, setInfo }) {
     },
     {
       field: "product",
-      valueGetter: (params) => params.row.product_id?.name,
       headerName: "Product",
       flex: 1.5,
       minWidth: 100,

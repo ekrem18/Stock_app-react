@@ -20,8 +20,7 @@ export default function ProductTable() {
     },
     {
       field: "category",
-      valueGetter: (params) => params.row.category_id?.name,      //---> senkronda sıkıntı yaşadığım için category olarak tanımladıım birşey yok ona dair bilgiyi 
-      headerName: "Category",                                   //---> row.category_id?.name ' den al diyorum
+      headerName: "Category",                                   
       flex: 1.5,
       headerAlign: "center",
       align: "center",
